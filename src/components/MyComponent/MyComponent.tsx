@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import './MyComponent.css';
-import { useGetHelloQuery } from '../../generated/graphql'
+import { useGetHelloQuery } from '../../generated/queries'
 
 interface MyComponentProps {}
 
@@ -15,7 +15,7 @@ const MyComponent: FC<MyComponentProps> = () => {
 
   return (
     <div className="MyComponent">
-      data: {hello?.hello}
+      data: {hello?.getHello}
     </div>
   )
 }

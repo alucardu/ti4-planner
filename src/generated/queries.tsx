@@ -17,18 +17,18 @@ export type Scalars = {
 
 export type Query = {
   __typename?: 'Query';
-  hello?: Maybe<Scalars['String']>;
+  getHello?: Maybe<Scalars['String']>;
 };
 
 export type GetHelloQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetHelloQuery = { __typename?: 'Query', hello?: string | null };
+export type GetHelloQuery = { __typename?: 'Query', getHello?: string | null };
 
 
 export const GetHelloDocument = gql`
     query getHello {
-  hello
+  getHello
 }
     `;
 
