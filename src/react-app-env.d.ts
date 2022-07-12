@@ -3,5 +3,7 @@
 namespace NodeJS {
   interface ProcessEnv {
     REACT_APP_GRAPHQL_API_URL: string;
+    MAIL_ACCOUNT: string;
+    MAIL_PASSWORD: string;
   }
 }
