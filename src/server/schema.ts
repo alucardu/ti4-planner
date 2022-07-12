@@ -1,3 +1,4 @@
+// Apollo server schema
 import { gql } from 'apollo-server-express';
 
 export const typeDefs = gql`

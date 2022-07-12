@@ -1,3 +1,4 @@
+// Apollo server  resolvers
 import { Resolvers } from "../generated/resolvers-types"
 
 export const resolvers: Resolvers = {
