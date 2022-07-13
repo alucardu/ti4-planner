@@ -5,4 +5,8 @@ export const typeDefs = gql`
   type Query {
     getHello: String
   }
+
+  type Query {
+    sendMail: String
+  }
 `;

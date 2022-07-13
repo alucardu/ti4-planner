@@ -18,12 +18,18 @@ export type Scalars = {
 export type Query = {
   __typename?: 'Query';
   getHello?: Maybe<Scalars['String']>;
+  sendMail?: Maybe<Scalars['String']>;
 };
 
 export type GetHelloQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type GetHelloQuery = { __typename?: 'Query', getHello?: string | null };
+
+export type SendMailQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type SendMailQuery = { __typename?: 'Query', sendMail?: string | null };
 
 
 export const GetHelloDocument = gql`
@@ -58,3 +64,35 @@ export function useGetHelloLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<G
 export type GetHelloQueryHookResult = ReturnType<typeof useGetHelloQuery>;
 export type GetHelloLazyQueryHookResult = ReturnType<typeof useGetHelloLazyQuery>;
 export type GetHelloQueryResult = Apollo.QueryResult<GetHelloQuery, GetHelloQueryVariables>;
+export const SendMailDocument = gql`
+    query sendMail {
+  sendMail
+}
+    `;
+
+/**
+ * __useSendMailQuery__
+ *
+ * To run a query within a React component, call `useSendMailQuery` and pass it any options that fit your needs.
+ * When your component renders, `useSendMailQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useSendMailQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useSendMailQuery(baseOptions?: Apollo.QueryHookOptions<SendMailQuery, SendMailQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<SendMailQuery, SendMailQueryVariables>(SendMailDocument, options);
+      }
+export function useSendMailLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<SendMailQuery, SendMailQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<SendMailQuery, SendMailQueryVariables>(SendMailDocument, options);
+        }
+export type SendMailQueryHookResult = ReturnType<typeof useSendMailQuery>;
+export type SendMailLazyQueryHookResult = ReturnType<typeof useSendMailLazyQuery>;
+export type SendMailQueryResult = Apollo.QueryResult<SendMailQuery, SendMailQueryVariables>;
