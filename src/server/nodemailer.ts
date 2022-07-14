@@ -1,7 +1,6 @@
 import nodemailer from "nodemailer";
-import Mail from "nodemailer/lib/mailer";
 import * as dotenv from "dotenv";
-dotenv.config({ path: '../../../../.env.local' });
+dotenv.config({ path: '.env.local' });
 
 const email = {
   from: '"moviese.at" <info@moviese.at>', // sender address
@@ -11,7 +10,7 @@ const email = {
   html: `Test`, // html body
 };
 
-export const main = async (email: Mail.Options) => {
+export const main = async () => {
   const hostname = 'smtpout.secureserver.net';
   const username = process.env.MAIL_ACCOUNT;
   const password = process.env.MAIL_PASSWORD;
@@ -33,5 +32,3 @@ export const main = async (email: Mail.Options) => {
 
   console.log('Message sent: %s', info.messageId);
 }
-
-main(email);
